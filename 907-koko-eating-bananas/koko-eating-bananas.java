@@ -12,7 +12,10 @@ class Solution {
             int mid = (high+low) / 2;
             long sum = 0;
             for(int j = 0; j < piles.length; j++){
-                sum += (piles[j] + mid - 1) / mid;
+                sum += piles[j] / mid;
+                if (piles[j] % mid != 0) {
+                sum++;
+                }
             }
             if(sum <= h){
                 high = mid;       
